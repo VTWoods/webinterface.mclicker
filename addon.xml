@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
-  id="webinterface.mobilexbmc"
+  id="webinterface.mclicker"
   version="0.1"
-  name="Mobile XBMC"
+  name="mClicker"
   provider-name="vtwoods">
   <requires>
     <import addon="xbmc.gui" version="2.11"/>

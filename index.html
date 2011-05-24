@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html> 
   <head> 
-    <title>XBMC Mobile Remote</title> 
+    <title>mClicker</title> 
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
@@ -26,9 +26,9 @@
   </head> 
 <body> 
 
-<div data-role="page" id="main">
+<div data-role="page" id="main" data-add-back-btn="false">
   <div data-role="header">
-    <h1>XBMC Mobile Remote</h1>
+    <h1>mClicker</h1>
   </div>
   <div data-role="content">
   <!--div data-role="collapsible" data-collapsed="true">
@@ -70,9 +70,9 @@
     </div-->
   </div>
   </div><!-- /page -->
-<div data-role="page" id="remote_gesture" style="-webkit-user-select: none" data-auto-back-btn="true">
+<div data-role="page" id="remote_gesture" style="-webkit-user-select: none" data-add-back-btn="true">
   <div id="gestureHeader" data-role="header">
-    <h1>Swipe</h1>
+    <h1>Gesture</h1>
     <a href="/" class="ui-btn-right" data-icon="home" data-iconpos="notext" 
        data-direction="reverse">Home</a>
     <div data-role="navbar">
@@ -84,7 +84,7 @@
     </div>
   </div>
 </div>
-<div data-role="page" id="utilPage" data-auto-back-btn="true">
+<div data-role="page" id="utilPage" data-add-back-btn="true">
   <div data-role="header">
     <h1>Utilities</h1>
     <a href="/" class="ui-btn-right" data-icon="home" data-iconpos="notext" 
@@ -94,7 +94,7 @@
   <a id="scanMusic" data-role="button">Scan Music Library</a>
   
 </div>
-<div data-role="page" id="remote_control" data-auto-back-btn="true">
+<div data-role="page" id="remote_control" data-add-back-btn="true">
   <div data-role="header">
     <h1>Remote</h1>
     <a href="/" class="ui-btn-right" data-icon="home" data-iconpos="notext" 
