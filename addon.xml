@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon
+  id="webinterface.mobilexbmc"
+  version="0.1"
+  name="Mobile XBMC"
+  provider-name="vtwoods">
+  <requires>
+    <import addon="xbmc.gui" version="2.11"/>
+  </requires>
+  <extension
+    point="xbmc.gui.webinterface"/>
+  <extension point="xbmc.addon.metadata">
+    <summary>Gesture Remote Control for touch based webkit browser.</summary>
+    <description>Mobile XBMC allows mobile devices to control XBMC using a web browser.  Mobile XBMC is build on the emerging jQuery Mobile API.</description>
+    <platform>all</platform>
+  </extension>
+</addon>

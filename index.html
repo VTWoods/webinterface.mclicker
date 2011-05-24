@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html> 
+  <head> 
+    <title>XBMC Mobile Remote</title> 
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.css" />
+    <!--link rel="stylesheet" href="jquery.mobile.css" /-->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.5.2.js"></script>
+    <script type="text/javascript" src="js/jquery.timer.js"></script>
+    <script type="text/javascript" src="js/jquery.extensions.js"></script>
+    <script type="text/javascript" src="js/xbmc.util.js"> </script>
+    <script type="text/javascript" src="js/xbmc.music.js"></script>
+    <script type="text/javascript" src="js/xbmc.remote.controller.js"></script>
+    <script type="text/javascript" src="js/xbmc.remote.utilities.js"></script>
+    <script type="text/javascript" src="js/xbmc.remote.gesture.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.js"></script>    
+    <!-- fixes collapsible overflow -->
+    <style type="text/css">
+      .ui-collapsible-heading {
+      margin-right:0px;
+      }
+    </style>
+  </head> 
+<body> 
+
+<div data-role="page" id="main">
+  <div data-role="header">
+    <h1>XBMC Mobile Remote</h1>
+  </div>
+  <div data-role="content">
+  <!--div data-role="collapsible" data-collapsed="true">
+    <h3>Music</h3>
+    <ul data-role="listview">
+      <li><a href="#music_artist">Artists</a></li>
+      <li><a href="#music_album">Album</a></li>
+    </ul>
+  </div-->
+  <!--div data-role="collapsible" data-collapsed="true">
+    <h3>Movies</h3>
+    <ul data-role="listview">
+      <li><a href="#movie_name">Name</a></li>
+      <li><a href="#movie_genre">Genre</a></li>
+    </ul>
+  </div-->
+  <!--div data-role="collapsible" data-collapsed="true">
+    <h3>Television</h3>
+    <ul data-role="listview">
+      <li><a href="#tv_show">Show Name</a></li>
+      <li><a href="#tv_genre">Genre</a></li>
+    </ul>
+  </div-->
+  <div data-role="collapsible" data-collapsed="true">
+    <h3>Remote</h3>
+    <ul data-role="listview" data-inset="true">
+      <li><a href="#remote_gesture">Gesture</a></li>
+      <li><a href="#remote_control">Controller</a></li>
+      <li><a href="#utilPage">Utilities</a></li>
+    </ul>
+  </div>
+  <!--div data-role="footer" data-position="fixed">
+    <div data-role="navbar">
+      <ul>
+	<li><a href="music">Music</a></li>
+	<li><a href="movies">Movies</a></li>
+	<li><a href="tv">TV</a></li>
+      </ul>
+    </div-->
+  </div>
+  </div><!-- /page -->
+<div data-role="page" id="remote_gesture" style="-webkit-user-select: none" data-auto-back-btn="true">
+  <div id="gestureHeader" data-role="header">
+    <h1>Swipe</h1>
+    <a href="/" class="ui-btn-right" data-icon="home" data-iconpos="notext" 
+       data-direction="reverse">Home</a>
+    <div data-role="navbar">
+    <ul>
+      <li><a id="fullscreenButton">Toggle GUI</a></li>
+      <li><a id="xbmcHomeButton">XBMC Home</a></li>
+      <li><a href="#remote_control">Remote</a></li>
+    </ul>
+    </div>
+  </div>
+</div>
+<div data-role="page" id="utilPage" data-auto-back-btn="true">
+  <div data-role="header">
+    <h1>Utilities</h1>
+    <a href="/" class="ui-btn-right" data-icon="home" data-iconpos="notext" 
+       data-direction="reverse">Home</a>
+  </div>
+  <a id="scanVideo" data-role="button">Scan Video Library</a>
+  <a id="scanMusic" data-role="button">Scan Music Library</a>
+  
+</div>
+<div data-role="page" id="remote_control" data-auto-back-btn="true">
+  <div data-role="header">
+    <h1>Remote</h1>
+    <a href="/" class="ui-btn-right" data-icon="home" data-iconpos="notext" 
+       data-direction="reverse">Home</a>
+  </div>
+  <div data-role="fieldcontain" align="center">
+    <label for="slider"> Volume: </label>
+    <input type="range" name="volumeSlider" id="volumeSlider" value="0" min="0" max="100"/>
+  </div>
+  <div data-inline="true" align="center">
+    <a id="playButton" data-role="button" data-inline="true">Play/Pause</a>
+    <!--a href="#" data-role="button" data-inline="true">Pause</a-->
+    <a id="stopButton" data-role="button" data-inline="true">Stop</a>
+  </div>
+  <div data-inline="true" align="center">
+    <a id="bigSkipBackward" data-role="button" data-inline="true">&lt;&lt;</a>
+    <a id="smallSkipBackward" data-role="button" data-inline="true">&lt;</a>
+    <a id="smallSkipForward" data-role="button" data-inline="true">&gt;</a>
+    <a id="bigSkipForward" data-role="button" data-inline="true">&gt;&gt;</a>
+  </div>
+  <div data-inline="true" align="center">
+    <a id="skipBack" data-role="button" data-inline="true">|&lt;</a>
+    <a id="skipNext" data-role="button" data-inline="true">&gt;|</a>
+  </div>
+  <div data-role="fieldcontain" align="center">
+    <label for="slider"> Seek: </label>
+    <input type="range" name="seekSlider" id="seekSlider" value="0" min="0" max="100"/>
+  </div>
+</div>
+</body>
+</html>
