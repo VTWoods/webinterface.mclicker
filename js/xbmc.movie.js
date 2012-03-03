@@ -1,7 +1,8 @@
 $(document).bind("mobileinit",function(){
-    $('img').lazyload();
+    //$('img').lazyload();
     $('#movie_all').live('pagecreate',function(){
 	callRPC("VideoLibrary.GetMovies",'{"properties" :["thumbnail"]}',function(data){
+	    
 	    var list = $('#allMovieList');
 	    var start = data['result']['limits']['start'];
 	    var end = data['result']['limits']['end'];

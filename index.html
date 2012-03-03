@@ -28,13 +28,13 @@
 	<h1>mClicker</h1>
       </div>
       <div data-role="content">
-	<!--div data-role="collapsible" data-collapsed="true">
+	<div data-role="collapsible" data-collapsed="true">
 	    <h3>Music</h3>
-	    <ul data-role="listview">
+	    <ul data-role="listview" data-inset="true">
 	      <li><a href="#music_artist">Artists</a></li>
 	      <li><a href="#music_album">Album</a></li>
 	    </ul>
-	</div-->
+	</div>
 	<div data-role="collapsible" data-collapsed="true">
 	  <h3>Movies</h3>
 	  <ul data-role="listview" data-inset="true">
@@ -76,6 +76,18 @@
       </div>
       <div data-role="content">
 	<ul id="allMovieList" data-role="listview">
+	</ul>
+      </div>
+    </div>
+    <!--Music Page -->
+    <div id="music_album" data-role="page" data-add-back-btn="true">
+      <div data-role="header">
+	<h1>Albums</h1>
+	<a href="/" class="ui-btn-right" data-icon="home" data-iconpos="notext" 
+	   data-direction="reverse">Home</a>
+      </div>
+      <div data-role="content">
+	<ul id="albumList" data-role="listview">
 	</ul>
       </div>
     </div>
